@@ -14,3 +14,6 @@ file(GLOB_RECURSE FUZZ_LEXBOR_ENCODING_SOURCES "*.c")
 ## Create
 #########################
 EXECUTABLE_LIST("fuzz_lexbor_encoding_" "${FUZZ_LEXBOR_ENCODING_SOURCES}" ${TEST_LEXBOR_LIB_NAME})
+
+add_fuzz_test(cifuzz_decode cifuzz_decode.cpp)
+target_link_libraries (cifuzz_decode ${PROJECT_NAME})

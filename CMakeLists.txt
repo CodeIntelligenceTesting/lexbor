@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.12...3.27)
+cmake_minimum_required(VERSION 3.16...3.27)
 
 
 # Options:
@@ -38,6 +38,9 @@ set(PROJECT_NAME "lexbor")
 
 message(STATUS "Project name: ${PROJECT_NAME}")
 
+find_package(cifuzz)
+enable_fuzz_testing()
+
 ################
 ## Options
 #########################
@@ -46,11 +49,11 @@ option(LEXBOR_BUILD_SHARED "Build shared library" ON)
 option(LEXBOR_BUILD_STATIC "Build static library" ON)
 option(LEXBOR_BUILD_SEPARATELY "Build modules separately" OFF)
 option(LEXBOR_BUILD_EXAMPLES "Build examples" OFF)
-option(LEXBOR_BUILD_TESTS "Build tests" OFF)
+option(LEXBOR_BUILD_TESTS "Build tests" ON)
 option(LEXBOR_BUILD_TESTS_CPP "Build C++ tests" ON)
 option(LEXBOR_BUILD_UTILS "Build utils" OFF)
 option(LEXBOR_BUILD_WITH_ASAN "Build with address sanitizer" OFF)
-option(LEXBOR_BUILD_WITH_FUZZER "Build with fuzzer" OFF)
+option(LEXBOR_BUILD_WITH_FUZZER "Build with fuzzer" ON)
 option(LEXBOR_INSTALL_HEADERS "Install header files" ON)
 option(LEXBOR_MAKE_PACKAGES_FILES "Create files for build packages" OFF)
 option(LEXBOR_PRINT_MODULE_DEPENDENCIES "Prints dependencies" OFF)
