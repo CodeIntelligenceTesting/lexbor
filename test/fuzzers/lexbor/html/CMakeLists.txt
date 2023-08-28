@@ -15,5 +15,5 @@ file(GLOB_RECURSE FUZZ_LEXBOR_HTML_SOURCES "*.c")
 #########################
 EXECUTABLE_LIST("fuzz_lexbor_html_" "${FUZZ_LEXBOR_HTML_SOURCES}" ${TEST_LEXBOR_LIB_NAME})
 
-add_fuzz_test(cifuzz_document_parse cifuzz_document_parse.cpp)
-target_link_libraries (cifuzz_document_parse ${PROJECT_NAME})
+add_fuzz_test(cifuzz_html document_parse.c)
+target_link_libraries (cifuzz_html ${PROJECT_NAME})

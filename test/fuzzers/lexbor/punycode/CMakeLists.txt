@@ -14,3 +14,6 @@ file(GLOB_RECURSE FUZZ_LEXBOR_PUNYCODE_SOURCES "*.c")
 ## Create
 #########################
 EXECUTABLE_LIST("fuzz_lexbor_punycode_" "${FUZZ_LEXBOR_PUNYCODE_SOURCES}" ${TEST_LEXBOR_LIB_NAME})
+
+add_fuzz_test(cifuzz_punycode base.c)
+target_link_libraries (cifuzz_punycode ${PROJECT_NAME})

@@ -26,7 +26,7 @@
 # - -rss_limit_mb=4096
 
 ## Maximum time to run fuzz tests. The default is to run indefinitely.
-#timeout: 30m
+timeout: 2m
 
 ## By default, fuzz tests are executed in a sandbox to prevent accidental
 ## damage to the system. Set to false to run fuzz tests unsandboxed.
@@ -40,10 +40,10 @@
 #no-notifications: true
 
 ## Set URL of CI Sense.
-#server: https://app.code-intelligence.com
+server: https://app.code-intelligence.com
 
 ## Set the project name on CI Sense.
-#project: my-project-1a2b3c4d
+project: lexbor-test-f4f8bb06
 
 ## Set the container registry to upload fuzz containers to.
 # registry: registry.example.org/my-org/my-project

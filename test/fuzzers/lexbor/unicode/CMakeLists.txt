@@ -14,3 +14,9 @@ file(GLOB_RECURSE FUZZ_LEXBOR_UNICODE_SOURCES "*.c")
 ## Create
 #########################
 EXECUTABLE_LIST("fuzz_lexbor_unicode_" "${FUZZ_LEXBOR_UNICODE_SOURCES}" ${TEST_LEXBOR_LIB_NAME})
+
+add_fuzz_test(cifuzz_idna idna_to_ascii.c)
+target_link_libraries (cifuzz_idna ${PROJECT_NAME})
+
+add_fuzz_test(cifuzz_normalization normalization_forms.c)
+target_link_libraries (cifuzz_normalization ${PROJECT_NAME})
