@@ -345,3 +345,6 @@ endif()
 set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}-${CPACK_PACKAGE_RELEASE}.${CPACK_RPM_PACKAGE_ARCHITECTURE}")
 
 include(CPack)
+
+add_fuzz_test(fuzz_parse cifuzz/fuzz_parse.cpp)
+target_link_libraries(fuzz_parse lexbor)
